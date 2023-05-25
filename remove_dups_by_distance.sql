@@ -7,6 +7,9 @@
 
 -- I want to make a new table made from the top 1 result of each distance match.
 
+
+
+-- ## Selects unique pairs of objects closer to each other than an angular radius within a single table
 SELECT  t1.source AS P_Name,
         t1.mcp_count AS entryID1,
         t1.ra AS P_ra, 
@@ -27,6 +30,8 @@ t1.mcp_count < t2.mcp_count AND
 (0.5/3600.0) > ( SQRT((POWER( ( ( (t1.ra * (PI()/180.0)) - (t2.ra * (PI()/180.0)) )*( COS( (t1.dec * (PI()/180.0)) )) ),2) )+(POWER(( (t1.dec * (PI()/180.0)) - (t2.dec * (PI()/180.0)) ),2))) ) * (180.0/PI())
 
 ------------------
+
+-- ## Deletes one of the objects in each pair found above
 
 -- To delete dupes from a table with dupe data,
 DELETE FROM AllSurveyed2021_fewer_dupes
