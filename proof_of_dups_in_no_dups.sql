@@ -1,7 +1,4 @@
--- to reproduce, copy
--- ConstantinResearchGroup.WilliamStJohn.AllSurveyed2021_NoDup as
--- AllSurveyed2021_NoDup and ConstantinResearchGroup.CameronKelahan.MCPMaser2020
--- as MCPMaser2020
+-- to reproduce, run this comparision in the sql query
 SELECT S.ra AS NODUP_RA, S.dec as NODUP_DEC, S.source as NODUP_NAME, M.[RA_(J2000)] AS MASER_RA, M.[Dec_(J2000)] AS MASER_DEC, M.Source_Name AS MASER_NAME
 FROM    ConstantinResearchGroup.WilliamStJohn.AllSurveyed2021_NoDup S, 
         ConstantinResearchGroup.CameronKelahan.MCPMaser2020 M
